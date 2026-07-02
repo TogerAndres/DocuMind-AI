@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background: radial-gradient(120% 120% at 15% 0%, #131a2e 0%, #0a0e1a 55%, #080b14 100%);
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(45, 212, 191, 0.3);
+  }
+  h1, h2, h3, h4 {
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.01em;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #242c48;
+    border-radius: 999px;
+  }
+  :focus-visible {
+    outline: 2px solid #2dd4bf;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-base-850/80 border border-base-700 rounded-xl2 backdrop-blur-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-accent-teal to-accent-purple text-base-950 font-semibold text-sm px-4 py-2.5 transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-base-600 bg-base-800 text-ink-100 font-medium text-sm px-4 py-2.5 transition-colors hover:border-accent-teal/50 hover:bg-base-700 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg text-ink-300 font-medium text-sm px-3 py-2 transition-colors hover:text-ink-100 hover:bg-base-800;
+  }
+  .input {
+    @apply w-full rounded-lg bg-base-900 border border-base-700 px-3.5 py-2.5 text-sm text-ink-100 placeholder:text-ink-700 focus:border-accent-teal/60 transition-colors;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider text-ink-500;
+  }
+}
